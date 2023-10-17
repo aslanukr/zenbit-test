@@ -1,11 +1,27 @@
-import "./App.css";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import { Suspense, lazy } from "react";
+import Layout from "./Layout";
 
-function App() {
+const Home = lazy(() => import("pages/Home/Home"));
+
+export default function App() {
   return (
     <>
-      <h1>ZenBit Test Project is under construction</h1>
+      <Router basename="/zenbit-test">
+        <Suspense fallback={"Loading..."}>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="*" element={<Navigate to="/" />} />
+            </Route>
+          </Routes>
+        </Suspense>
+      </Router>
     </>
   );
 }
-
-export default App;
