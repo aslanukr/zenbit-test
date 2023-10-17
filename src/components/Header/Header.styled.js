@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
-export const HeaderContainer = styled.div`
+export const HeaderContainer = styled.header`
+  position: fixed;
   display: flex;
-  justify-content: space-between;
-  padding: 0 80px;
-  align-items: center;
+  width: 100%;
   max-width: 1440px;
   height: 80px;
+  padding: 0 80px;
+  justify-content: space-between;
+  align-items: center;
   background-color: rgba(23, 34, 52, 1);
 `;

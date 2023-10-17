@@ -1,6 +1,5 @@
-import { BtnWrapper } from "../Buttons/ButtonWrapper.styled";
 import HeaderBtn from "../Buttons/HeaderBtn";
-import { BtnTitle } from "../Buttons/HeaderBtn.styled";
+import { BtnTitle, BtnWrapper } from "../Buttons/Buttons.styled";
 import Logo from "../Logo/Logo";
 import { HeaderContainer } from "./Header.styled";
 

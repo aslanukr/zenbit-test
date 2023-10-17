@@ -1,4 +1,4 @@
-import { BtnLink } from "./HeaderBtn.styled";
+import { BtnLink } from "./Buttons.styled";
 
 const HeaderBtn = ({ filled = false, children }) => {
   return <BtnLink filled={filled}>{children}</BtnLink>;
