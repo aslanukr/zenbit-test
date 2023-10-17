@@ -31,18 +31,32 @@ export const HeroContent = styled.div`
 `;
 
 export const HeroTitle = styled.h1`
-  font-size: 64px;
+  font-size: 44px;
   font-weight: 700;
   text-align: center;
   color: #ffff;
+
+  @media screen and (min-width: 481px) {
+    font-size: 54px;
+  }
+  @media screen and (min-width: 769px) {
+    font-size: 64px;
+  }
 `;
 
 export const HeroText = styled.p`
   display: block;
   max-width: 822px;
   font-family: "Lato";
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 400;
   text-align: center;
   color: #ffff;
+
+  @media screen and (min-width: 481px) {
+    font-size: 22px;
+  }
+  @media screen and (min-width: 769px) {
+    font-size: 24px;
+  }
 `;

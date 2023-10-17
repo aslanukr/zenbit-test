@@ -9,13 +9,12 @@ export const BtnWrapper = styled.div`
 export const BtnLink = styled(Link)`
   display: flex;
   justify-content: center;
-  width: 160px;
-  height: 44px;
+
   background-color: ${(props) =>
     props.filled ? "rgba(178, 159, 126, 1)" : "none"};
   border: 1px solid rgba(178, 159, 126, 1);
   border-radius: 5px;
-  padding: 11px 0;
+  padding: 11px 5px;
   align-content: center;
   color: ${(props) =>
     props.filled ? "rgba(255, 255, 255, 1)" : "rgba(178, 159, 126, 1)"};
@@ -24,6 +23,15 @@ export const BtnLink = styled(Link)`
   &:focus {
     border: 1px solid rgba(255, 255, 255, 1);
     color: rgba(255, 255, 255, 1);
+  }
+
+  @media screen and (min-width: 481px) {
+    padding: 11px 20px;
+  }
+
+  @media screen and (min-width: 769px) {
+    width: 160px;
+    height: 44px;
   }
 `;
 
