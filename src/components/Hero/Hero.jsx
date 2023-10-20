@@ -9,10 +9,13 @@ const Hero = () => {
         <HeroText>
           Numerous calculations predict, and experiments confirm, that the force
           field reflects the beam, while the mass defect is not formed. The
-          chemical compound is negatively charged. Twhile the mass defect is{" "}
+          chemical compound is negatively charged. While the mass defect is{" "}
         </HeroText>
       </HeroContent>
-      <HeroBtn>Get Started</HeroBtn>
+
+      <HeroBtn to="deals" spy={true} smooth={true} offset={-90} duration={1200}>
+        Get Started
+      </HeroBtn>
     </HeroSection>
   );
 };
