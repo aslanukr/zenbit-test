@@ -13,7 +13,7 @@ const Hero = () => {
         </HeroText>
       </HeroContent>
 
-      <HeroBtn to="deals" spy={true} smooth={true} offset={-90} duration={1200}>
+      <HeroBtn to="deals" smooth={true} offset={-90} duration={1200}>
         Get Started
       </HeroBtn>
     </HeroSection>

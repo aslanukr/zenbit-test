@@ -8,10 +8,10 @@ const Header = () => {
     <HeaderContainer>
       <Logo />
       <BtnWrapper>
-        <HeaderBtn>
+        <HeaderBtn to="/login">
           <BtnTitle>Log In</BtnTitle>
         </HeaderBtn>
-        <HeaderBtn filled>
+        <HeaderBtn to="/signup" filled>
           <BtnTitle>Sign Up</BtnTitle>
         </HeaderBtn>
       </BtnWrapper>

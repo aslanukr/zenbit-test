@@ -12,6 +12,9 @@ import {
 const DealCard = ({
   item: { img, title, price, ticket, yield_rate, days_left, sold },
 }) => {
+  const formattedPrice = price.toLocaleString();
+  const formattedTicket = ticket.toLocaleString();
+
   return (
     <DealItem>
       <ImageWrapper>
@@ -21,8 +24,8 @@ const DealCard = ({
         <ItemTitle>{title}</ItemTitle>
         <DetailsList>
           <DetailsGroup>
-            <DetailsInfo>{price} Dhs</DetailsInfo>
-            <DetailsInfo>Ticket - {ticket} Dhs</DetailsInfo>
+            <DetailsInfo>{formattedPrice} Dhs</DetailsInfo>
+            <DetailsInfo>Ticket - {formattedTicket} Dhs</DetailsInfo>
           </DetailsGroup>
           <DetailsGroup>
             <DetailsInfo>Yield {yield_rate}%</DetailsInfo>

@@ -1,7 +1,7 @@
-import { LogoText } from "./Logo.styled";
+import { LogoLink } from "./Logo.styled";
 
 const Logo = () => {
-  return <LogoText>My Logo</LogoText>;
+  return <LogoLink to="/">My Logo</LogoLink>;
 };
 
 export default Logo;
