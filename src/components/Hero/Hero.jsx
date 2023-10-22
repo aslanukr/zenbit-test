@@ -1,7 +1,12 @@
-import { HeroBtn } from "../Buttons/Buttons.styled";
+import { useSelector } from "react-redux";
+import { HeroBtn, HeroLink } from "../Buttons/Buttons.styled";
 import { HeroContent, HeroSection, HeroText, HeroTitle } from "./Hero.styled";
+import { selectIsAuth } from "src/redux/selectors";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
+  const isAuth = useSelector(selectIsAuth);
+
   return (
     <HeroSection>
       <HeroContent>
@@ -13,9 +18,13 @@ const Hero = () => {
         </HeroText>
       </HeroContent>
 
-      <HeroBtn to="deals" smooth={true} offset={-90} duration={1200}>
-        Get Started
-      </HeroBtn>
+      {isAuth ? (
+        <HeroBtn to="deals" smooth={true} offset={-90} duration={1200}>
+          Get Started
+        </HeroBtn>
+      ) : (
+        <HeroLink to="/login">Get Started</HeroLink>
+      )}
     </HeroSection>
   );
 };

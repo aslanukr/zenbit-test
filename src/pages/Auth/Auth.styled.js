@@ -28,7 +28,7 @@ export const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 80px 20px;
+  padding: 80px 10px;
   margin: auto;
 
   @media screen and (min-width: 580px) {
@@ -57,7 +57,9 @@ export const FormLabel = styled.label`
 `;
 
 export const FormInput = styled.input`
-  width: 350px;
+  width: 100%;
+  min-width: 300px;
+  max-width: 350px;
   padding: 14px 20px 12px 20px;
 
   border-radius: 5px;
@@ -68,6 +70,10 @@ export const FormInput = styled.input`
   font-size: 14px;
   font-weight: 400;
   color: rgb(23, 34, 52);
+
+  @media screen and (min-width: 580px) {
+    width: 350px;
+  }
 `;
 
 export const InfoText = styled.p`

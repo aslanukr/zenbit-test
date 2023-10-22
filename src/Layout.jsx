@@ -3,6 +3,7 @@ import Header from "./components/Header/Header";
 import "./index.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Footer from "./components/Footer/Footer";
 
 const Layout = ({ children }) => {
   return (
@@ -11,6 +12,7 @@ const Layout = ({ children }) => {
       <main>
         <Outlet />
       </main>
+      <Footer />
       <ToastContainer
         position="top-center"
         autoClose={1500}

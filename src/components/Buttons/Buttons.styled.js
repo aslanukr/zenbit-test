@@ -66,6 +66,27 @@ export const HeroBtn = styled(ScrollLink)`
   }
 `;
 
+export const HeroLink = styled(Link)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  height: 54px;
+  padding: 10px 24px;
+  border: 1px solid rgba(255, 255, 255, 1);
+  border-radius: 8px;
+
+  font-size: 20px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 1);
+
+  &:hover,
+  &:focus {
+    border: 1px solid rgba(178, 159, 126, 1);
+    color: rgba(178, 159, 126, 1);
+  }
+`;
+
 export const LogOutBtn = styled.button`
   background: none;
   border: none;
