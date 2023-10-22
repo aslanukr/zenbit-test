@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const AuthContainer = styled.div`
@@ -6,13 +7,23 @@ export const AuthContainer = styled.div`
 `;
 
 export const ImageAside = styled.aside`
+  max-width: 890px;
+  height: 100vh;
+`;
+
+export const BgImage = styled.img`
+  width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: center;
 `;
 
 export const FormWrapper = styled.div`
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 100px;
   margin: auto;
-  padding: 0 100px;
 `;
 
 export const Form = styled.form`
@@ -48,6 +59,18 @@ export const FormInput = styled.input`
   color: rgb(23, 34, 52);
 `;
 
+export const InfoText = styled.p`
+  display: flex;
+  justify-content: end;
+  margin-top: 10px;
+  font-family: "Lato";
+  font-size: 14px;
+  font-weight: 700;
+
+  color: ${(props) =>
+    props.error ? "rgb(158, 36, 36)" : "rgb(178, 159, 126)"};
+`;
+
 export const FormBtn = styled.button`
   margin-top: 62px;
   padding: 11px 0;
@@ -59,4 +82,32 @@ export const FormBtn = styled.button`
   font-size: 16px;
   font-weight: 700;
   color: white;
+
+  &:hover,
+  &:focus {
+    background-color: rgb(214, 160, 109);
+    border: 2px solid rgb(214, 160, 109);
+  }
+`;
+
+export const RedirectText = styled.p`
+  display: block;
+  margin-top: 10px;
+  font-family: "Lato";
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+`;
+
+export const RedirectLink = styled(Link)`
+  font-family: "Lato";
+  font-size: 14px;
+  font-weight: 700;
+  color: rgb(178, 159, 126);
+
+  &:hover,
+  &:focus {
+    color: rgb(214, 160, 109);
+    text-decoration: underline;
+  }
 `;

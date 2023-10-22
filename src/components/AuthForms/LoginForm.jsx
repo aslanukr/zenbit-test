@@ -1,14 +1,16 @@
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import {
   Form,
   FormBtn,
   FormInput,
   FormLabel,
+  InfoText,
   RedirectLink,
   RedirectText,
 } from "src/pages/Auth/Auth.styled";
 
-const SignUpForm = () => {
+const LoginForm = () => {
   const {
     register,
     handleSubmit,
@@ -19,7 +21,6 @@ const SignUpForm = () => {
 
   return (
     <>
-      {" "}
       <Form onSubmit={handleSubmit(onSubmit)}>
         <FormLabel>
           Email
@@ -28,7 +29,7 @@ const SignUpForm = () => {
             placeholder="Email"
           />
         </FormLabel>
-        <p>{errors.email?.message}</p>
+        <InfoText error>{errors.email?.message}</InfoText>
         <FormLabel>
           Password
           <FormInput
@@ -42,17 +43,19 @@ const SignUpForm = () => {
             placeholder="Password"
           />
         </FormLabel>
+        <InfoText error>{errors.password?.message}</InfoText>
+        <InfoText remind>
+          <Link to={"/signup"}>Forgot password?</Link>
+        </InfoText>
 
-        <p>{errors.password?.message}</p>
-
-        <FormBtn type="submit">Sign Up</FormBtn>
+        <FormBtn type="submit">Login</FormBtn>
       </Form>
       <RedirectText>
-        Already have an account?{" "}
-        <RedirectLink to={"/login"}>Login</RedirectLink>
+        Don’t have an account?{" "}
+        <RedirectLink to={"/signup"}>Sign up</RedirectLink>
       </RedirectText>
     </>
   );
 };
 
-export default SignUpForm;
+export default LoginForm;

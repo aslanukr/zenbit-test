@@ -1,6 +1,7 @@
 import SignUpForm from "src/components/AuthForms/SignUpForm";
 import {
   AuthContainer,
+  BgImage,
   FormTitle,
   FormWrapper,
   ImageAside,
@@ -10,7 +11,7 @@ const SignUp = () => {
   return (
     <AuthContainer>
       <ImageAside>
-        <img src="src/assets/bg/authbg.jpg" alt="skyline of the city" />
+        <BgImage src="src/assets/bg/authbg.jpg" alt="skyline of the city" />
       </ImageAside>
       <FormWrapper>
         <FormTitle>Sign Up</FormTitle>

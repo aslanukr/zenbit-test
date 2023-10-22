@@ -18,12 +18,14 @@ export const BtnLink = styled(Link)`
   padding: 11px 5px;
   align-content: center;
   color: ${(props) =>
-    props.filled ? "rgba(255, 255, 255, 1)" : "rgba(178, 159, 126, 1)"};
+    props.filled ? "rgb(255, 255, 255)" : "rgb(178, 159, 126)"};
 
   &:hover,
   &:focus {
-    border: 1px solid rgba(255, 255, 255, 1);
+    border: 1px solid rgb(255, 255, 255);
+
     color: rgba(255, 255, 255, 1);
+    background-color: ${(props) => props.filled && "rgb(214, 160, 109)"};
   }
 
   @media screen and (min-width: 481px) {
