@@ -14,7 +14,7 @@ export const HeroSection = styled.section`
   background-position: center;
   background-size: cover;
 
-  background-color: #c4c4c4;
+  background-color: rgb(23, 34, 52);
   background-image: linear-gradient(
       rgba(23, 34, 52, 0.6),
       rgba(23, 34, 52, 0.6)

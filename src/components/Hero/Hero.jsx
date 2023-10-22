@@ -2,7 +2,6 @@ import { useSelector } from "react-redux";
 import { HeroBtn, HeroLink } from "../Buttons/Buttons.styled";
 import { HeroContent, HeroSection, HeroText, HeroTitle } from "./Hero.styled";
 import { selectIsAuth } from "src/redux/selectors";
-import { Link } from "react-router-dom";
 
 const Hero = () => {
   const isAuth = useSelector(selectIsAuth);
