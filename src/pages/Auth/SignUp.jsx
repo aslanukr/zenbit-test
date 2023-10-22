@@ -6,12 +6,13 @@ import {
   FormWrapper,
   ImageAside,
 } from "./Auth.styled";
+import AuthBg from "src/assets/bg/authbg.jpg";
 
 const SignUp = () => {
   return (
     <AuthContainer>
       <ImageAside>
-        <BgImage src="src/assets/bg/authbg.jpg" alt="skyline of the city" />
+        <BgImage src={AuthBg} alt="skyline of the city" />
       </ImageAside>
       <FormWrapper>
         <FormTitle>Sign Up</FormTitle>

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import HeroBg from "src/assets/bg/hero.jpg";
 
 export const HeroSection = styled.section`
   width: 100%;
@@ -18,7 +19,7 @@ export const HeroSection = styled.section`
       rgba(23, 34, 52, 0.6),
       rgba(23, 34, 52, 0.6)
     ),
-    url(src/assets/bg/hero.jpg);
+    url(${HeroBg});
 `;
 
 export const HeroContent = styled.div`
