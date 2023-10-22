@@ -7,9 +7,14 @@ export const AuthContainer = styled.div`
 `;
 
 export const ImageAside = styled.aside`
-  width: 100%;
-  max-width: 890px;
-  height: 100vh;
+  display: none;
+
+  @media screen and (min-width: 580px) {
+    display: flex;
+    width: 100%;
+    max-width: 890px;
+    height: 100vh;
+  }
 `;
 
 export const BgImage = styled.img`
