@@ -35,6 +35,7 @@ export const DealItem = styled.li`
 `;
 
 export const ImageWrapper = styled.div`
+  position: relative;
   width: 100%;
   height: 400px;
   overflow: hidden;
@@ -53,6 +54,20 @@ export const Image = styled.img`
   object-position: center;
 `;
 
+export const ImageOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(23, 34, 52, 0.8);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 1;
+  }
+`;
 export const InfoWrapper = styled.div`
   display: flex;
   flex-direction: column;

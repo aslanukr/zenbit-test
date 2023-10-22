@@ -4,6 +4,7 @@ import {
   DetailsInfo,
   DetailsList,
   Image,
+  ImageOverlay,
   ImageWrapper,
   InfoWrapper,
   ItemTitle,
@@ -19,6 +20,7 @@ const DealCard = ({
     <DealItem>
       <ImageWrapper>
         <Image src={img} alt={title} />
+        <ImageOverlay />
       </ImageWrapper>
       <InfoWrapper>
         <ItemTitle>{title}</ItemTitle>

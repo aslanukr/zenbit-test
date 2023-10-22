@@ -38,7 +38,7 @@ const Footer = () => {
       <ContactsWrapper>
         <ContactLink to={"tel:+380670000000"}>
           <BsFillTelephoneFill size={16} color="white" />
-          +38 073 000 00 00
+          +38 067 000 00 00
         </ContactLink>
         <ContactLink to={"mailto:order@real-estate.com"}>
           <MdAlternateEmail size={16} color="white" />

@@ -4,7 +4,7 @@ import Logo from "../Logo/Logo";
 import { HeaderContainer, UserName } from "./Header.styled";
 import { useDispatch, useSelector } from "react-redux";
 import { selectIsAuth, selectUser } from "src/redux/selectors";
-import { RiLogoutBoxRLine } from "react-icons/ri";
+import { FiLogOut } from "react-icons/fi";
 import { logOutThunk } from "src/redux/auth/authThunk";
 
 const Header = () => {
@@ -24,7 +24,7 @@ const Header = () => {
         <BtnWrapper>
           <UserName>{email}</UserName>
           <LogOutBtn type="button" onClick={onLogOut}>
-            <RiLogoutBoxRLine color="rgb(178, 159, 126)" size={24} />
+            <FiLogOut color="rgb(178, 159, 126)" size={24} />
           </LogOutBtn>
         </BtnWrapper>
       ) : (
