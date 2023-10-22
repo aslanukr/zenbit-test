@@ -4,10 +4,10 @@ import HeroBg from "src/assets/bg/hero.jpg";
 export const HeroSection = styled.section`
   width: 100%;
   height: 1024px;
-  padding: 0 80px;
+  padding: 120px 80px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+
   align-items: center;
 
   background-repeat: no-repeat;
@@ -20,6 +20,11 @@ export const HeroSection = styled.section`
       rgba(23, 34, 52, 0.6)
     ),
     url(${HeroBg});
+
+  @media screen and (min-width: 769px) {
+    justify-content: center;
+    padding: 0 80px;
+  }
 `;
 
 export const HeroContent = styled.div`
