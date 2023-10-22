@@ -28,8 +28,12 @@ export const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 80px 100px;
+  padding: 80px 20px;
   margin: auto;
+
+  @media screen and (min-width: 580px) {
+    padding: 80px 100px;
+  }
 `;
 
 export const Form = styled.form`
