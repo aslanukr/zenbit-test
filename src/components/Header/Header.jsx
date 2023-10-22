@@ -12,8 +12,6 @@ const Header = () => {
   const email = useSelector(selectUser);
   const dispatch = useDispatch();
 
-  const nameSplit = email.split("@");
-
   const onLogOut = (data) => {
     dispatch(logOutThunk(data));
   };
@@ -22,9 +20,9 @@ const Header = () => {
     <HeaderContainer>
       <Logo />
 
-      {isAuth ? (
+      {isAuth && email ? (
         <BtnWrapper>
-          <UserName>{nameSplit[0]}</UserName>
+          <UserName>{email}</UserName>
           <LogOutBtn type="button" onClick={onLogOut}>
             <RiLogoutBoxRLine color="rgb(178, 159, 126)" size={24} />
           </LogOutBtn>

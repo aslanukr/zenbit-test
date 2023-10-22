@@ -1,4 +1,4 @@
-import { createAsyncThunk, current } from "@reduxjs/toolkit";
+import { createAsyncThunk } from "@reduxjs/toolkit";
 import { logIn, logOut, registerUser } from "src/services/api";
 
 export const registerThunk = createAsyncThunk(
@@ -29,25 +29,6 @@ export const logOutThunk = createAsyncThunk(
   async (credentials, thunkAPI) => {
     try {
       return await logOut(credentials);
-    } catch (e) {
-      return thunkAPI.rejectWithValue(e.message);
-    }
-  }
-);
-
-export const currentUserThunk = createAsyncThunk(
-  "auth/refresh",
-  async (_, thunkAPI) => {
-    const state = thunkAPI.getState();
-    const persistedToken = state.auth.token;
-
-    if (persistedToken === null) {
-      return thunkAPI.rejectWithValue();
-    }
-
-    try {
-      const response = await current();
-      return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }
