@@ -5,7 +5,7 @@ export const handleAuthFullfilled = (state, { payload }) => {
   state.error = null;
 };
 
-export const handleRegisterFullfilled = (state, { payload }) => {
+export const handleRegisterFullfilled = (state) => {
   state.error = null;
 };
 
@@ -27,5 +27,20 @@ export const handleLogOutRejected = (state, { payload }) => {
   state.user = null;
   state.token = "";
   state.isAuth = false;
+  state.error = payload;
+};
+
+export const handleCurrentUserFullfilled = (state, { payload }) => {
+  state.user = payload;
+  state.isAuth = true;
+  state.isFetchingCurrentUser = false;
+};
+
+export const handleCurrentUserPending = (state) => {
+  state.isFetchingCurrentUser = true;
+};
+
+export const handleCurrentUserRejected = (state, { payload }) => {
+  state.isFetchingCurrentUser = false;
   state.error = payload;
 };

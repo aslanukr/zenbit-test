@@ -3,3 +3,4 @@ export const selectIsLoading = (state) => state.deals.isLoading;
 export const selectDealsError = (state) => state.deals.error;
 export const selectIsAuth = (state) => state.auth.isAuth;
 export const selectUser = (state) => state.auth.user;
+export const selectAccessToken = (state) => state.auth.token;
