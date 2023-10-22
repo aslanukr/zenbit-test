@@ -1,5 +1,7 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import {
   Form,
   FormBtn,
@@ -9,15 +11,44 @@ import {
   RedirectLink,
   RedirectText,
 } from "src/pages/Auth/Auth.styled";
+import { loginThunk } from "src/redux/auth/authThunk";
 
 const LoginForm = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const onSubmit = (data) => {
+    try {
+      dispatch(loginThunk(data))
+        .unwrap()
+        .then(() => {
+          navigate("/");
+          reset();
+        })
+        .catch((e) => {
+          console.log(e);
+          toast.error(`${e}`, {
+            position: "bottom-center",
+            autoClose: 1200,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          });
+        });
+    } catch (error) {
+      console.error("Login Error:", error);
+    }
+  };
 
   return (
     <>
@@ -25,11 +56,17 @@ const LoginForm = () => {
         <FormLabel>
           Email
           <FormInput
-            {...register("email", { required: "Email is required" })}
+            {...register("email", {
+              required: "Email is required",
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                message: "Invalid email address",
+              },
+            })}
             placeholder="Email"
           />
         </FormLabel>
-        <InfoText error>{errors.email?.message}</InfoText>
+        <InfoText valid="true">{errors.email?.message}</InfoText>
         <FormLabel>
           Password
           <FormInput
@@ -43,8 +80,8 @@ const LoginForm = () => {
             placeholder="Password"
           />
         </FormLabel>
-        <InfoText error>{errors.password?.message}</InfoText>
-        <InfoText remind>
+        <InfoText valid="true">{errors.password?.message}</InfoText>
+        <InfoText>
           <Link to={"/signup"}>Forgot password?</Link>
         </InfoText>
 

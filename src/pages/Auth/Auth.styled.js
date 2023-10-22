@@ -79,8 +79,9 @@ export const InfoText = styled.p`
   font-weight: 700;
 
   color: ${(props) =>
-    props.error ? "rgb(158, 36, 36)" : "rgb(178, 159, 126)"};
+    props.valid ? "rgb(158, 36, 36)" : "rgb(178, 159, 126)"};
 `;
+InfoText.shouldForwardProp = (prop) => prop !== "valid";
 
 export const FormBtn = styled.button`
   margin-top: 62px;

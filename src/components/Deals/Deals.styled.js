@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const DealsSection = styled.section`
   padding: 30px 10px;
   @media screen and (min-width: 850px) {
-    padding: 50px 80px 0 80px;
+    padding: 50px 80px 50px 80px;
   }
 `;
 

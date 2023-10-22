@@ -2,13 +2,22 @@ import { createSlice } from "@reduxjs/toolkit";
 import {
   handleAuthFullfilled,
   handleAuthRejected,
+  handleCurrentUserFullfilled,
+  handleCurrentUserPending,
+  handleCurrentUserRejected,
   handleLogOutFullfilled,
   handleLogOutRejected,
+  handleRegisterFullfilled,
 } from "./authOperations";
-import { logOutThunk, loginThunk, registerThunk } from "./authThunk";
+import {
+  currentUserThunk,
+  logOutThunk,
+  loginThunk,
+  registerThunk,
+} from "./authThunk";
 
 const initialState = {
-  user: { email: null },
+  user: null,
   token: "",
   isAuth: false,
   error: "",
@@ -20,15 +29,15 @@ const authSlice = createSlice({
   initialState,
   extraReducers: (builder) =>
     builder
-      .addCase(registerThunk.fulfilled, handleAuthFullfilled)
+      .addCase(registerThunk.fulfilled, handleRegisterFullfilled)
       .addCase(registerThunk.rejected, handleAuthRejected)
       .addCase(loginThunk.fulfilled, handleAuthFullfilled)
       .addCase(loginThunk.rejected, handleAuthRejected)
       .addCase(logOutThunk.fulfilled, handleLogOutFullfilled)
-      .addCase(logOutThunk.rejected, handleLogOutRejected),
-  //   .addCase(currentUserThunk.fulfilled, handleCurrentUserFullfilled)
-  //   .addCase(currentUserThunk.pending, handleCurrentUserPending)
-  //   .addCase(currentUserThunk.rejected, handleCurrentUserRejected),
+      .addCase(logOutThunk.rejected, handleLogOutRejected)
+      .addCase(currentUserThunk.fulfilled, handleCurrentUserFullfilled)
+      .addCase(currentUserThunk.pending, handleCurrentUserPending)
+      .addCase(currentUserThunk.rejected, handleCurrentUserRejected),
 });
 
 export const authReducer = authSlice.reducer;

@@ -19,3 +19,11 @@ export const HeaderContainer = styled.header`
     padding: 0 80px;
   }
 `;
+
+export const UserName = styled.p`
+  font-family: "Lato";
+  font-size: 16px;
+  font-weight: 700;
+
+  color: rgb(178, 159, 126);
+`;

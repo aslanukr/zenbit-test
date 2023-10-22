@@ -4,7 +4,7 @@ import HeroBg from "src/assets/bg/hero.jpg";
 export const HeroSection = styled.section`
   width: 100%;
   height: 1024px;
-  padding: 120px 80px;
+  padding: 140px 80px;
   display: flex;
   flex-direction: column;
 
