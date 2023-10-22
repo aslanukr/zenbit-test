@@ -7,6 +7,7 @@ export const AuthContainer = styled.div`
 `;
 
 export const ImageAside = styled.aside`
+  width: 100%;
   max-width: 890px;
   height: 100vh;
 `;
