@@ -49,7 +49,8 @@ export const FormTitle = styled.h3`
 `;
 
 export const FormLabel = styled.label`
-  display: block;
+  display: flex;
+  flex-direction: column;
   margin-top: 20px;
   font-size: 14px;
   font-weight: 700;
