@@ -11,7 +11,10 @@ const Login = () => {
   return (
     <AuthContainer>
       <ImageAside>
-        <BgImage src="../../assets/bg/authbg.jpg" alt="skyline of the city" />
+        <BgImage
+          src="../../src/assets/bg/authbg.jpg"
+          alt="skyline of the city"
+        />
       </ImageAside>
       <FormWrapper>
         <FormTitle>Login</FormTitle>
