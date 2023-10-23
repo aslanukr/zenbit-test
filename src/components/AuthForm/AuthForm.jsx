@@ -36,7 +36,7 @@ const AuthForm = ({ formType }) => {
           console.log(e);
           toast.error(`${e}`, {
             position: "bottom-center",
-            autoClose: 1200,
+            autoClose: 500,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
