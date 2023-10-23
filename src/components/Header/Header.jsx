@@ -12,8 +12,8 @@ const Header = () => {
   const email = useSelector(selectUser);
   const dispatch = useDispatch();
 
-  const onLogOut = (data) => {
-    dispatch(logOutThunk(data));
+  const onLogOut = () => {
+    dispatch(logOutThunk());
   };
 
   return (

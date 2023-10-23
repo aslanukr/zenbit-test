@@ -23,9 +23,7 @@ export default function App() {
     if (isAccessToken) {
       dispatch(currentUserThunk())
         .unwrap()
-        .then((response) => {
-          console.log("currentUserThunk response:", response);
-        })
+        .then()
         .catch(() => dispatch(logOutThunk()));
     }
   }, [dispatch, isAccessToken]);

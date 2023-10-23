@@ -21,6 +21,7 @@ export const handleLogOutFullfilled = (state) => {
   state.token = "";
   state.isAuth = false;
   state.error = "";
+  state.items = [];
 };
 
 export const handleLogOutRejected = (state, { payload }) => {
@@ -28,6 +29,7 @@ export const handleLogOutRejected = (state, { payload }) => {
   state.token = "";
   state.isAuth = false;
   state.error = payload;
+  state.items = [];
 };
 
 export const handleCurrentUserFullfilled = (state, { payload }) => {
