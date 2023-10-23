@@ -1,4 +1,4 @@
-import LoginForm from "src/components/AuthForms/LoginForm";
+import AuthForm from "src/components/AuthForm/AuthForm";
 import {
   AuthContainer,
   BgImage,
@@ -16,7 +16,7 @@ const Login = () => {
       </ImageAside>
       <FormWrapper>
         <FormTitle>Login</FormTitle>
-        <LoginForm />
+        <AuthForm formType="login" />
       </FormWrapper>
     </AuthContainer>
   );
