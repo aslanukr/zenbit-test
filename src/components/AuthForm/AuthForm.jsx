@@ -57,7 +57,7 @@ const AuthForm = ({ formType }) => {
         .then(() => {
           toast.success("Registration successful!", {
             position: "bottom-center",
-            autoClose: 1200,
+            autoClose: 500,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -73,7 +73,7 @@ const AuthForm = ({ formType }) => {
         .catch((e) => {
           toast.error(`${e}`, {
             position: "bottom-center",
-            autoClose: 1200,
+            autoClose: 500,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
