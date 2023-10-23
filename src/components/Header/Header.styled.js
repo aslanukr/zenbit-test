@@ -21,9 +21,16 @@ export const HeaderContainer = styled.header`
 `;
 
 export const UserName = styled.p`
+  margin: 0;
+  display: flex;
+  flex-direction: column;
   font-family: "Lato";
   font-size: 16px;
   font-weight: 700;
 
   color: rgb(178, 159, 126);
+`;
+
+export const WelcomeText = styled.span`
+  color: white;
 `;

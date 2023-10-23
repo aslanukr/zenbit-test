@@ -1,5 +1,6 @@
 export const handleAuthFullfilled = (state, { payload }) => {
-  state.user = payload.email;
+  state.username = payload.username;
+  state.email = payload.email;
   state.token = payload.token;
   state.isAuth = true;
   state.error = null;
@@ -10,14 +11,16 @@ export const handleRegisterFullfilled = (state) => {
 };
 
 export const handleAuthRejected = (state, { payload }) => {
-  state.user = null;
+  state.username = null;
+  state.email = null;
   state.token = "";
   state.isAuth = false;
   state.error = payload;
 };
 
 export const handleLogOutFullfilled = (state) => {
-  state.user = null;
+  state.username = null;
+  state.email = null;
   state.token = "";
   state.isAuth = false;
   state.error = "";
@@ -25,7 +28,8 @@ export const handleLogOutFullfilled = (state) => {
 };
 
 export const handleLogOutRejected = (state, { payload }) => {
-  state.user = null;
+  state.username = null;
+  state.email = null;
   state.token = "";
   state.isAuth = false;
   state.error = payload;
@@ -33,7 +37,8 @@ export const handleLogOutRejected = (state, { payload }) => {
 };
 
 export const handleCurrentUserFullfilled = (state, { payload }) => {
-  state.user = payload;
+  state.username = payload.username;
+  state.email = payload.email;
   state.isAuth = true;
   state.isFetchingCurrentUser = false;
 };

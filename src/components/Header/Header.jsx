@@ -1,7 +1,7 @@
 import HeaderBtn from "../Buttons/HeaderBtn";
 import { BtnTitle, BtnWrapper, LogOutBtn } from "../Buttons/Buttons.styled";
 import Logo from "../Logo/Logo";
-import { HeaderContainer, UserName } from "./Header.styled";
+import { HeaderContainer, UserName, WelcomeText } from "./Header.styled";
 import { useDispatch, useSelector } from "react-redux";
 import { selectIsAuth, selectUser } from "src/redux/selectors";
 import { FiLogOut } from "react-icons/fi";
@@ -9,7 +9,7 @@ import { logOutThunk } from "src/redux/auth/authThunk";
 
 const Header = () => {
   const isAuth = useSelector(selectIsAuth);
-  const email = useSelector(selectUser);
+  const username = useSelector(selectUser);
   const dispatch = useDispatch();
 
   const onLogOut = () => {
@@ -20,9 +20,11 @@ const Header = () => {
     <HeaderContainer>
       <Logo />
 
-      {isAuth && email ? (
+      {isAuth && username ? (
         <BtnWrapper>
-          <UserName>{email}</UserName>
+          <UserName>
+            <WelcomeText>Welcome,</WelcomeText> {username}
+          </UserName>
           <LogOutBtn type="button" onClick={onLogOut}>
             <FiLogOut color="rgb(178, 159, 126)" size={24} />
           </LogOutBtn>

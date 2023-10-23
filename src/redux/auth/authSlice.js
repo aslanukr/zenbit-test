@@ -17,7 +17,8 @@ import {
 } from "./authThunk";
 
 const initialState = {
-  user: null,
+  username: null,
+  email: null,
   token: "",
   isAuth: false,
   error: "",

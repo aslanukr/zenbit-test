@@ -133,6 +133,19 @@ const AuthForm = ({ formType }) => {
       {formType === "signup" && (
         <Form onSubmit={handleSubmit(onSignUpSubmit)}>
           <FormLabel>
+            Name
+            <FormInput
+              {...register("username", {
+                required: "User name is required",
+                minLength: {
+                  value: 2,
+                  message: "User name minimal length is 2 characters",
+                },
+              })}
+              placeholder="Name"
+            />
+          </FormLabel>
+          <FormLabel>
             Email
             <FormInput
               {...register("email", {

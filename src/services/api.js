@@ -1,7 +1,6 @@
 import axios from "axios";
 
 axios.defaults.baseURL = "https://aslanukr-zb-backend.onrender.com/api";
-// axios.defaults.baseURL = "http://localhost:3000/api";
 
 export const token = {
   set(token) {
