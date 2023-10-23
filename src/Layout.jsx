@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
     <div className="container">
       <Header />
       <main>
-        {isAuthLoading || (isLoading && <Loader />)}
+        {(isAuthLoading || isLoading) && <Loader />}
         <Outlet />
       </main>
       <Footer />
