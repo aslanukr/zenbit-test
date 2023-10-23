@@ -10,6 +10,7 @@ import { Loader } from "./components/Loader/Loader";
 import { useDispatch, useSelector } from "react-redux";
 import { selectAccessToken } from "./redux/selectors";
 import { currentUserThunk, logOutThunk } from "./redux/auth/authThunk";
+import PublicRoute from "./components/PublicRoute/PublicRoute";
 
 const Home = lazy(() => import("pages/Home/Home"));
 const Login = lazy(() => import("pages/Auth/Login"));
@@ -34,8 +35,22 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<SignUp />} />
+              <Route
+                path="/login"
+                element={
+                  <PublicRoute>
+                    <Login />
+                  </PublicRoute>
+                }
+              />
+              <Route
+                path="/signup"
+                element={
+                  <PublicRoute>
+                    <SignUp />
+                  </PublicRoute>
+                }
+              />
               <Route path="*" element={<Navigate to="/" />} />
             </Route>
           </Routes>
