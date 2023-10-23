@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAction, createSlice } from "@reduxjs/toolkit";
 import { getDealsThunk } from "./dealsThunk";
 
 export const handlePending = (state) => {
@@ -11,27 +11,33 @@ export const handleRejected = (state, { payload }) => {
   state.error = payload;
 };
 
+export const handleFullfilled = (state, { payload }) => {
+  state.isLoading = false;
+  state.error = "";
+  state.items = payload;
+};
+
 const initialState = {
   items: [],
   isLoading: false,
   error: null,
 };
 
+export const resetDealsState = createAction("deals/resetState");
+
 export const dealsSlice = createSlice({
   name: "deals",
   initialState: initialState,
   extraReducers: (builder) => {
     builder
-      .addCase(getDealsThunk.fulfilled, (state, { payload }) => {
+      .addCase(getDealsThunk.pending, handlePending)
+      .addCase(getDealsThunk.fulfilled, handleFullfilled)
+      .addCase(getDealsThunk.rejected, handleRejected)
+      .addCase(resetDealsState, (state) => {
+        state.items = [];
         state.isLoading = false;
-        state.error = "";
-        state.items = payload;
-      })
-      .addMatcher((action) => action.type.endsWith("/pending"), handlePending)
-      .addMatcher(
-        (action) => action.type.endsWith("/rejected"),
-        handleRejected
-      );
+        state.error = null;
+      });
   },
 });
 

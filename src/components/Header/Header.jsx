@@ -10,6 +10,7 @@ import {
 } from "src/redux/selectors";
 import { FiLogOut } from "react-icons/fi";
 import { logOutThunk } from "src/redux/auth/authThunk";
+import { resetDealsState } from "src/redux/deals/dealsSlice";
 
 const Header = () => {
   const isAuth = useSelector(selectIsAuth);
@@ -19,6 +20,7 @@ const Header = () => {
 
   const onLogOut = () => {
     dispatch(logOutThunk());
+    dispatch(resetDealsState());
   };
 
   return (

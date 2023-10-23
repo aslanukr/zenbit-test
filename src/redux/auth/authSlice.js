@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {
   handleAuthFullfilled,
+  handleAuthPending,
   handleAuthRejected,
   handleCurrentUserFullfilled,
   handleCurrentUserPending,
@@ -22,6 +23,7 @@ const initialState = {
   token: "",
   isAuth: false,
   error: "",
+  isLoading: false,
   isFetchingCurrentUser: false,
 };
 
@@ -30,8 +32,10 @@ const authSlice = createSlice({
   initialState,
   extraReducers: (builder) =>
     builder
+      .addCase(registerThunk.pending, handleAuthPending)
       .addCase(registerThunk.fulfilled, handleRegisterFullfilled)
       .addCase(registerThunk.rejected, handleAuthRejected)
+      .addCase(loginThunk.pending, handleAuthPending)
       .addCase(loginThunk.fulfilled, handleAuthFullfilled)
       .addCase(loginThunk.rejected, handleAuthRejected)
       .addCase(logOutThunk.fulfilled, handleLogOutFullfilled)

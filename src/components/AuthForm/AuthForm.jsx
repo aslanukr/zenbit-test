@@ -145,6 +145,7 @@ const AuthForm = ({ formType }) => {
               placeholder="Name"
             />
           </FormLabel>
+          <InfoText valid="true">{errors.username?.message}</InfoText>
           <FormLabel>
             Email
             <FormInput
